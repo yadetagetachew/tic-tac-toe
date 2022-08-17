@@ -5,8 +5,8 @@ let playerdisplay = document.querySelector('.display');
 
 const fullArray = 9
 
-const O_LETTER = "O"
-const X_LETTER = "X"
+const O_LETTER = "/O_LETTER.png"
+const X_LETTER = "/X_LETTER.png"
 
 let currentPlayer = X_LETTER
 let spaces = Array(9).fill(null)
@@ -25,16 +25,20 @@ function boxClicked(e) {
   
   if (!spaces[id]){
     spaces[id] = currentPlayer
-    e.target.innerText = currentPlayer
+    // e.target.innerText = currentPlayer
 
-    // const image = document.createElement('img');
-    // image.src = X_LETTER;
-    // image.appendChild(image)
+      const image = document.createElement('img');
+      image.src = currentPlayer;
+      e.target.appendChild(image)
+
     if(playerWon() !== false){
-      playerdisplay.innerText = `${currentPlayer} has won!`
+      let winnerDispaly = currentPlayer.slice(1,2)
+      playerdisplay.innerText = `${winnerDispaly} has won!`
       let winningLine = playerWon()
       gameOver()
       console.log(winningLine)
+    }else if(!spaces.includes(null)){
+      playerdisplay.innerText = "Draw!"
     }else{
       playerdisplay.innerText = "Awaiting a Winner!"
     }

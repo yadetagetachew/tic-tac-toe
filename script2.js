@@ -1,5 +1,5 @@
-const X_IMAGE_URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/x.png';
-const O_IMAGE_URL = 'https://s3-us-west-2.amazonaws.com/s.cdpn.io/1083533/circle.png';
+const X_IMAGE_URL = '/X_LETTER.png';
+const O_IMAGE_URL = '/O_LETTER.png';
 let playerdisplay = document.querySelector('.display');
 let playerText = document.getElementById('playerText');
 let restartBtn = document.getElementById('restartBtn');
